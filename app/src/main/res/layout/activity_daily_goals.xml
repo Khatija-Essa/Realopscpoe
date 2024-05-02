@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DailyGoals">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="0dp">
+
+
+        <TextView
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"
+            android:alpha="0.8"
+            android:text="@string/fill_out_your_daily_goals"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            tools:ignore="MissingPrefix" />
+
+
+        <TextView
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/minimum_daily_goal"
+            android:textSize="25sp"
+            tools:ignore="MissingPrefix" />
+
+        <EditText
+            android:id="@+id/mingoals"
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_border"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textSize="20sp"
+            tools:ignore="MissingPrefix" />
+
+        <TextView
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="40dp"
+            android:textSize="25sp"
+            android:text="@string/maximum_daily_goal"
+            tools:ignore="MissingPrefix" />
+
+        <EditText
+            android:id="@+id/maxgoals"
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_border"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textSize="20sp"
+            tools:ignore="MissingPrefix" />
+
+        <TextView
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/today_s_date_dd_mm_yyyy"
+            android:textSize="25sp"
+            tools:ignore="MissingPrefix" />
+
+        <EditText
+            android:id="@+id/todayDate"
+            fontPath="fonts/nunito_light.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_border"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textSize="20sp"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:id="@+id/addgoals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="125dp"
+            android:background="@drawable/btn_background"
+            android:text="@string/add_goals"
+            android:textColor="@color/white" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

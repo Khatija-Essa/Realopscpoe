@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Realopsc</string>
+    <string name="Sign_up">Sign up</string>
+    <string name="log_in">Log In</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account_login"> Create an account </string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="categories">Categories</string>
+    <string name="Prog">Programming 3A</string>
+    <string name="expand_all">Expand All</string>
+    <string name="Total_hours">Total Hours</string>
+    <string name="OPSC">Open Source Coding </string>
+    <string name="IPMA">IT Project Management</string>
+    <string name="INRS">Introduction to Research</string>
+    <string name="add_task">Add Task</string>
+    <string name="time_tracker">Time Tracker</string>
+    <string name="all_tasks">All tasks</string>
+    <string name="add_daily_goals">Add Daily Goals</string>
+    <string name="view_graphs">View Graph</string>
+    <string name="fill_the_details_below">Fill in the details below</string>
+    <string name="task_category">Enter Category</string>
+    <string name="task_description">Enter Description</string>
+    <string name="task_date">Enter Task Date</string>
+    <string name="task_start_time">Enter Start Time</string>
+    <string name="task_end_time">Enter End Time</string>
+    <string name="fill_out_your_daily_goals">Fill out your daily goals</string>
+    <string name="minimum_daily_goal">Minimum Daily Goal</string>
+    <string name="maximum_daily_goal">Maximum Daily Goal</string>
+    <string name="today_s_date_dd_mm_yyyy">Today\'s date (dd/mm/yyyy)</string>
+    <string name="add_goals">Add Daily goals</string>
+    <string name="totalhours">You have spent a total of 5 hours in this category</string>
+</resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".LoginActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/log_in"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etSEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="emailAddress"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="245dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/etSPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="password"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="#616161"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="307dp"
+        tools:ignore="MissingConstraints" />
+
+
+
+    <Button
+        android:id="@+id/btnSSigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="@string/log_in"
+        android:textColor="#FFFFFFFF"
+        android:background="@drawable/btn_background"
+        tools:layout_editor_absoluteX="14dp"
+        tools:layout_editor_absoluteY="431dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvRedirectLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:text="@string/already_have_an_account_login"
+        android:textColor="#18206F"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="-12dp"
+        tools:layout_editor_absoluteY="532dp"
+        tools:ignore="MissingConstraints" />
+</LinearLayout>
