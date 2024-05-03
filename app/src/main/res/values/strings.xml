@@ -34,5 +34,6 @@
     <string name="maximum_daily_goal">Maximum Daily Goal</string>
     <string name="today_s_date_dd_mm_yyyy">Today\'s date (dd/mm/yyyy)</string>
     <string name="add_goals">Add Daily goals</string>
-    <string name="totalhours">You have spent a total of 5 hours in this category</string>
+    <string name="totalhours">You have spent a total of 1 hours in this category</string>
+
 </resources>

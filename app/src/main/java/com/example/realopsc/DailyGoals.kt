@@ -24,7 +24,7 @@ class DailyGoals : AppCompatActivity() {
         minGoalInput = findViewById(R.id.mingoals)
         maxGoalInput = findViewById(R.id.maxgoals)
         dateInput = findViewById(R.id.todayDate)
-        addButton = findViewById<Button>(R.id.addgoals)
+        addButton = findViewById(R.id.addgoals)
 
         addButton.setOnClickListener {
             val intent = Intent(this, AllCategories::class.java)

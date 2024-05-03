@@ -29,7 +29,6 @@ class Add_Task : AppCompatActivity() {
     private lateinit var button: FloatingActionButton
     private val db = FirebaseFirestore.getInstance()
     private val models = mutableListOf<model>()
-    lateinit var bottomNav: BottomNavigationView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,9 +43,10 @@ class Add_Task : AppCompatActivity() {
 
         val addTask = findViewById<Button>(R.id.addTask)
         addTask.setOnClickListener {
+            fetchTask()
             val intent = Intent(this, create_timesheet::class.java)
             startActivity(intent)
-            fetchTask()
+
         }
 
         val dailyGoals = findViewById<Button>(R.id.dailyGoals)

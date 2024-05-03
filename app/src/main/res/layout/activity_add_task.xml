@@ -60,7 +60,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/taskRecycler"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_above="@id/addTask"/>
 
         </FrameLayout>
         <Button

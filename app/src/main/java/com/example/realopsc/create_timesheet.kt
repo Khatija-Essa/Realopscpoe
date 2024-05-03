@@ -39,9 +39,6 @@ class create_timesheet : AppCompatActivity() {
     private lateinit var taskTime: EditText
     private lateinit var taskendTime: EditText
     private lateinit var addTaskbtn: Button
-    private var mYear: Int = 0
-    private var mMonth: Int = 0
-    private var mDay: Int = 0
     private var mHour: Int = 0
     private var mMinute: Int = 0
     private lateinit var timePickerDialog: TimePickerDialog
