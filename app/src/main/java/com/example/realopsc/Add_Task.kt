@@ -1,6 +1,7 @@
 package com.example.realopsc
 
 import android.content.Intent
+import android.graphics.ColorSpace.Model
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -26,7 +27,7 @@ class Add_Task : AppCompatActivity() {
     private lateinit var imageView: ImageView
     private lateinit var button: FloatingActionButton
     private val db = FirebaseFirestore.getInstance()
-    private val tasks = mutableListOf<model>()
+    private val models = mutableListOf<model>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +35,7 @@ class Add_Task : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_add_task)
         taskRecycler = findViewById(R.id.taskRecycler)
-        taskAdapter = Taskadapter(tasks)
+        taskAdapter = Taskadapter(models)
         taskRecycler.adapter = taskAdapter
         val layoutManager = LinearLayoutManager(this)
         taskRecycler.layoutManager = layoutManager
@@ -57,8 +58,8 @@ class Add_Task : AppCompatActivity() {
             .get()
             .addOnSuccessListener { resuts ->
                 for (document in resuts.documents) {
-                    val task = document.toObject(model::class.java)!!
-                    tasks.add(task)
+                    val Model = document.toObject(model::class.java)!!
+                    models.add(Model)
                 }
                 taskAdapter.notifyDataSetChanged()
             }

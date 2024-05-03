@@ -49,7 +49,7 @@ class create_timesheet : AppCompatActivity() {
     private lateinit var imgPreview: ImageView
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: Taskadapter
-    private val tasks = mutableListOf<model>()
+    private val models = mutableListOf<model>()
     private val calendar = Calendar.getInstance()
     private lateinit var chosenImageUri: Uri
     private lateinit var storage: FirebaseStorage
@@ -106,6 +106,16 @@ class create_timesheet : AppCompatActivity() {
                             "saveImageUrlInFirestore",
                             "Image upload successful, handle success case"
                         )
+                        val intent = Intent(this, Add_Task::class.java).apply {
+                            putExtra("title", title)
+                            putExtra("description", description)
+                            putExtra("date", date)
+                            putExtra("start", start)
+                            putExtra("end", end)
+                            putExtra("imageUrl", downloadUrl)
+                        }
+                        startActivity(intent)
+                        finish()
                     }
                 }.addOnFailureListener { exception ->
                     Log.d("saveImageUrlInFirestore", "Image upload failed, exception: $exception")
@@ -180,7 +190,7 @@ class create_timesheet : AppCompatActivity() {
             "start" to stime,
             "end" to etime
         )
-        firestore.collection("users") // Replace with your collection name
+        firestore.collection("models")
             .add(imageData)
             .addOnSuccessListener { documentReference ->
                 Log.d("saving to firestore", "Image URL and other data saved in Firestore")
