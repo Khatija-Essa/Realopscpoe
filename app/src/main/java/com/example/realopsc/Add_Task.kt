@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.tasks.Tasks
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.FirebaseFirestore
@@ -28,6 +29,7 @@ class Add_Task : AppCompatActivity() {
     private lateinit var button: FloatingActionButton
     private val db = FirebaseFirestore.getInstance()
     private val models = mutableListOf<model>()
+    lateinit var bottomNav: BottomNavigationView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,20 +42,23 @@ class Add_Task : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         taskRecycler.layoutManager = layoutManager
 
-        val addTask  = findViewById<Button>(R.id.addTask)
+        val addTask = findViewById<Button>(R.id.addTask)
         addTask.setOnClickListener {
             val intent = Intent(this, create_timesheet::class.java)
-            startActivity(intent)}
+            startActivity(intent)
+            fetchTask()
+        }
 
-        val dailyGoals  = findViewById<Button>(R.id.dailyGoals)
+        val dailyGoals = findViewById<Button>(R.id.dailyGoals)
         dailyGoals.setOnClickListener {
             val intent = Intent(this, DailyGoals::class.java)
-            startActivity(intent)}
+            startActivity(intent)
+        }
 
 
     }
 
-    private  fun fetchTask(){
+    private fun fetchTask() {
         db.collection("users")
             .get()
             .addOnSuccessListener { resuts ->
@@ -63,7 +68,7 @@ class Add_Task : AppCompatActivity() {
                 }
                 taskAdapter.notifyDataSetChanged()
             }
-            .addOnFailureListener{exception->
+            .addOnFailureListener { exception ->
 
             }
 
