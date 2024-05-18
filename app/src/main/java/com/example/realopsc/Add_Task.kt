@@ -3,12 +3,14 @@ package com.example.realopsc
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
 
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -22,6 +24,8 @@ class Add_Task : AppCompatActivity() {
     private lateinit var button: FloatingActionButton
     private val db = FirebaseFirestore.getInstance()
     private val models = mutableListOf<model>()
+    private val userId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +37,7 @@ class Add_Task : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         taskRecycler.layoutManager = layoutManager
 
+        loadProfileData()
         val addTask = findViewById<Button>(R.id.addTask)
         addTask.setOnClickListener {
             fetchTask()
@@ -64,6 +69,25 @@ class Add_Task : AppCompatActivity() {
 
             }
 
+    }
+    private fun loadProfileData() {
+        db.collection("users").document(userId).get().addOnSuccessListener { document ->
+            if (document != null && document.exists()) {
+                // Populate your views here with document data
+                val tit = document.getString("Title")
+                val tdescrip = document.getString("Description")
+                val tdate = document.getString("Date")
+                val startt = document.getString("Start Time")
+                val endt = document.getString("End Time")
+
+                findViewById<EditText>(R.id.addTaskTitle).setText(tit)
+                findViewById<EditText>(R.id.addTaskDescription).setText(tdescrip)
+                findViewById<EditText>(R.id.taskDate).setText(tdate)
+                findViewById<EditText>(R.id.taskTime).setText(startt)
+                findViewById<EditText>(R.id.taskendTime).setText(endt)
+
+            }
+        }
     }
 
 }
