@@ -11,10 +11,13 @@ import com.google.firebase.storage.FirebaseStorage
 class ViewHolder (itemView: View): RecyclerView.ViewHolder(itemView){
     private val title: TextView = itemView.findViewById(R.id.mtitle)
     private val description: TextView = itemView.findViewById(R.id.mdescription)
-    private val imageView3: ImageView = itemView.findViewById(R.id.imageView3)
+    private val imageUrl: ImageView = itemView.findViewById(R.id.imageView3)
     private val date: TextView = itemView.findViewById(R.id.mdate)
-    private val stime: TextView = itemView.findViewById(R.id.mstarttime)
-    private val etime: TextView = itemView.findViewById(R.id.mendtime)
+    private val start: TextView = itemView.findViewById(R.id.mstarttime)
+    private val end: TextView = itemView.findViewById(R.id.mendtime)
+
+
+
 
     fun bind(model: model) {
         Log.d("FirebaseUrl","URL:${model.imageUrl}")
@@ -24,12 +27,12 @@ class ViewHolder (itemView: View): RecyclerView.ViewHolder(itemView){
         storageReference.downloadUrl.addOnSuccessListener { uri ->
             Glide.with(itemView.context)
                 .load(model.imageUrl + ".jpeg")
-                .into(imageView3)
+                .into(imageUrl)
             title.text ="${model.title}"
             description.text ="${model.description}"
             date.text ="${model.date}"
-            stime.text="${model.start}"
-            etime.text = "${model.end}"
+            start.text="${model.start}"
+            end.text = "${model.end}"
         }
 
     }

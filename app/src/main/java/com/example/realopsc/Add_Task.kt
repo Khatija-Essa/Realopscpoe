@@ -1,23 +1,16 @@
 package com.example.realopsc
 
 import android.content.Intent
-import android.graphics.ColorSpace.Model
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.gms.tasks.Tasks
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.firebase.Firebase
+
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.toObject
 
 class Add_Task : AppCompatActivity() {
     private lateinit var taskRecycler: RecyclerView
@@ -29,7 +22,6 @@ class Add_Task : AppCompatActivity() {
     private lateinit var button: FloatingActionButton
     private val db = FirebaseFirestore.getInstance()
     private val models = mutableListOf<model>()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
