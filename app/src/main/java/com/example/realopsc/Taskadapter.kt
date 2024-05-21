@@ -25,9 +25,8 @@ class Taskadapter(private var userList: List<model>) : RecyclerView.Adapter<Task
 
             // Directly load the image URL into the ImageView using Glide
             Glide.with(itemView.context)
-                .load(model.imageUrl)
+                .load(model.imageUrl) // Use the imageUrl directly
                 .into(imageUrl)
-
             title.text = model.title
             description.text = model.description
             date.text = model.date
