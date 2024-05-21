@@ -23,7 +23,7 @@ class Add_Task : AppCompatActivity() {
     private lateinit var imageView: ImageView
     private lateinit var button: FloatingActionButton
     private val db = FirebaseFirestore.getInstance()
-    private val models = mutableListOf<model>()
+    private val itemList = mutableListOf<model>()
     private val userId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
 
 
@@ -32,7 +32,7 @@ class Add_Task : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_add_task)
         taskRecycler = findViewById(R.id.taskRecycler)
-        taskAdapter = Taskadapter(models)
+        taskAdapter = Taskadapter(itemList)
         taskRecycler.adapter = taskAdapter
         val layoutManager = LinearLayoutManager(this)
         taskRecycler.layoutManager = layoutManager
@@ -56,12 +56,12 @@ class Add_Task : AppCompatActivity() {
     }
 
     private fun fetchTask() {
-        db.collection("users")
+        db.collection("models")
             .get()
             .addOnSuccessListener { resuts ->
                 for (document in resuts.documents) {
                     val Model = document.toObject(model::class.java)!!
-                    models.add(Model)
+                    itemList.add(Model)
                 }
                 taskAdapter.notifyDataSetChanged()
             }
@@ -71,23 +71,23 @@ class Add_Task : AppCompatActivity() {
 
     }
     private fun loadProfileData() {
-        db.collection("users").document(userId).get().addOnSuccessListener { document ->
-            if (document != null && document.exists()) {
-                // Populate your views here with document data
-                val tit = document.getString("Title")
-                val tdescrip = document.getString("Description")
-                val tdate = document.getString("Date")
-                val startt = document.getString("Start Time")
-                val endt = document.getString("End Time")
+        db.collection("models").get().addOnSuccessListener { documents ->
+            if (!documents.isEmpty) {
+                for (document in documents) {
+                    if (document.exists()) {
+                        val tit = document.getString("title")
+                        val tdescrip = document.getString("description")
+                        val tdate = document.getString("date")
+                        val startt = document.getString("start")
+                        val endt = document.getString("end")
+                        val imgt = document.getString("imageUrl")
 
-                findViewById<EditText>(R.id.addTaskTitle).setText(tit)
-                findViewById<EditText>(R.id.addTaskDescription).setText(tdescrip)
-                findViewById<EditText>(R.id.taskDate).setText(tdate)
-                findViewById<EditText>(R.id.taskTime).setText(startt)
-                findViewById<EditText>(R.id.taskendTime).setText(endt)
-
+                        val models = model(tit, tdescrip, tdate, startt, endt, imgt)
+                        itemList.add(models)
+                    }
+                }
+                taskAdapter.notifyDataSetChanged()
             }
         }
     }
-
 }

@@ -187,7 +187,7 @@ class create_timesheet : AppCompatActivity() {
             "start" to stime,
             "end" to etime
         )
-        firestore.collection("users")
+        firestore.collection("models")
             .add(imageData)
             .addOnSuccessListener { documentReference ->
                 Log.d("saving to firestore", "Image URL and other data saved in Firestore")
