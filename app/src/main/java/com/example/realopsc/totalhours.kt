@@ -7,8 +7,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.sql.Time
 
 class totalhours : AppCompatActivity() {
+    var id: Int? = null
+    var punchInTime: Time? = null
+    var punchOutTime: Time? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

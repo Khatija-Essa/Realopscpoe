@@ -35,5 +35,10 @@
     <string name="today_s_date_dd_mm_yyyy">Today\'s date (dd/mm/yyyy)</string>
     <string name="add_goals">Add Daily goals</string>
     <string name="totalhours">You have spent a total of 1 hours in this category</string>
+    <string name="basic_fragment">Basic</string>
+    <string name="advanced_fragment">Advanced</string>
+    <string name="programming_languages_fragment">Programming Languages</string>
+    <string name="contacts_fragment">Contacts</string>
+    <string name="countries_by_population">Countries by population</string>
 
 </resources>
