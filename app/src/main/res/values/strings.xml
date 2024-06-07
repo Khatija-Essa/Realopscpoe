@@ -22,7 +22,7 @@
     <string name="time_tracker">Time Tracker</string>
     <string name="all_tasks">All tasks</string>
     <string name="add_daily_goals">Add Daily Goals</string>
-    <string name="view_graphs">View Graph</string>
+    <string name="Graph_Home">View Graph</string>
     <string name="fill_the_details_below">Fill in the details below</string>
     <string name="task_category">Enter Category</string>
     <string name="task_description">Enter Description</string>
@@ -40,5 +40,11 @@
     <string name="programming_languages_fragment">Programming Languages</string>
     <string name="contacts_fragment">Contacts</string>
     <string name="countries_by_population">Countries by population</string>
+    <string name="add_button_description">Add Button</string>
+    <string name="reset_button_description">Reset Button</string>
+    <string name="timer_button_description">Timer Button</string>
+    <string name="pomodoro_button_description">Pomodoro Button</string>
+    <string name="total_hours_format">%d hours, %d minutes</string>
+    <string name="invalid_punch_times">Invalid punch times</string>
 
 </resources>

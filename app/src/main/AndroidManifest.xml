@@ -12,18 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Realopsc"
         tools:targetApi="31">
-        <activity
-            android:name=".fake"
-            android:exported="false" />
+
         <activity
             android:name=".totalhours"
             android:exported="false" />
         <activity
             android:name=".DailyGoals"
             android:exported="false" />
-        <activity
-            android:name=".Item_task"
-            android:exported="false" />
+
         <activity
             android:name=".create_timesheet"
             android:exported="false" />

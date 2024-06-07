@@ -3,6 +3,7 @@ package com.example.realopsc
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -61,6 +62,11 @@ class AllCategories : AppCompatActivity() {
         val btn8  = findViewById<Button>(R.id.total_hours_button4)
         btn8.setOnClickListener {
             val intent = Intent(this, totalhours::class.java)
+            startActivity(intent)}
+
+        val btn9  = findViewById<ImageButton>(R.id.imageButton)
+        btn9.setOnClickListener {
+            val intent = Intent(this, PomodoroActivity::class.java)
             startActivity(intent)}
 
      }

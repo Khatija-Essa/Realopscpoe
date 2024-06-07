@@ -7,13 +7,24 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
 android:gravity="center"
-tools:context=".MainActivity">
+tools:context=".GraphActivity">
 
-<EditText
+    <TextView
+        fontPath="fonts/nunito_light.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="60dp"
+        android:text="Please Enter Total Hours Worked"
+        android:textSize="20dp"
+        tools:ignore="MissingPrefix" />
+
+    <EditText
     android:id="@+id/inputData"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:hint="Enter data here" />
+    android:textSize="20dp"
+    android:hint="Enter total hours here" />
 
 <Button
     android:id="@+id/submitData"
